@@ -21,6 +21,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+app.get('/healthcheck', (req, res) => res.send('ok'));
+
 if (__DEV__) {
     require('longjohn');
     app.use(require('morgan')('dev'));
