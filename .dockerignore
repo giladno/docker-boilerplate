@@ -1,4 +1,8 @@
 .git
 .db
+.dockerignore
+.env
+npm-debug.log
 node_modules
 static
+docker-compose.yml
