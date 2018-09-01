@@ -1,15 +1,18 @@
 FROM node:10.9.0-alpine
 
-RUN npm install -g nodemon
-
 RUN mkdir -p /usr/src/app
 RUN chown node:node /usr/src/app
+
+ARG NODE_ENV=production
+ENV NODE_ENV $NODE_ENV
+
 WORKDIR /usr/src/app
 USER node
 
 COPY package*.json .
 RUN npm install --quiet --no-progress && npm cache clean --force
+ENV PATH /opt/node_modules/.bin:$PATH
 
 COPY . .
 
-CMD ["nodemon", "server.js"]
+CMD ["node", "server.js"]

@@ -1,7 +1,11 @@
 version: '3'
 services:
     app:
-        build: .
+        build:
+            context: .
+            args:
+                - NODE_ENV=development
+        command: ./node_modules/.bin/nodemon server.js
         depends_on:
             - mysql
         volumes:
