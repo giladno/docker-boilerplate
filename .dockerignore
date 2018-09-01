@@ -4,5 +4,6 @@
 .env
 node_modules
 static
+Dockerfile
 docker-compose.yml
 nginx.conf

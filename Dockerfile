@@ -6,6 +6,8 @@ RUN chown node:node /usr/src/app
 ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
 
+EXPOSE 3000 9229
+
 WORKDIR /usr/src/app
 USER node
 

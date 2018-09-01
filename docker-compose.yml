@@ -5,14 +5,15 @@ services:
             context: .
             args:
                 - NODE_ENV=development
-        command: ./node_modules/.bin/nodemon server.js
+        command: ./node_modules/.bin/nodemon --inspect=0.0.0.0:9229 server.js
         depends_on:
             - mysql
         volumes:
             - .:/usr/src/app
-            - /usr/src/app/node_modules/
+            - /usr/src/app/node_modules
         ports:
             - 3000:3000
+            - 9229:9229
         env_file:
             - .env
         environment:
