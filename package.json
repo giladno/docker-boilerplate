@@ -4,8 +4,7 @@
     "description": "Docker+Node.js+MySQL+Nginx boilerplate example app",
     "scripts": {
         "docker:start": "docker-compose up --build || true",
-        "docker:stop": "docker-compose down",
-        "start": "nodemon server.js"
+        "docker:stop": "docker-compose down"
     },
     "engines": {
         "node": ">=10.9.0"

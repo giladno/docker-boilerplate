@@ -5,8 +5,8 @@ services:
         depends_on:
             - mysql
         volumes:
-            - .:/opt/app
-            - /opt/app/node_modules/
+            - .:/home/node
+            - /home/node/node_modules/
         ports:
             - 3000:3000
         env_file:

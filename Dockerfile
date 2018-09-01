@@ -2,11 +2,12 @@ FROM node:10.9.0-alpine
 
 RUN npm install -g nodemon
 
-WORKDIR /opt/app
+USER node
+WORKDIR /home/node
 
 COPY package.json .
 RUN npm install --quiet
 
 COPY . .
 
-CMD ["npm", "start"]
+CMD ["nodemon", "server.js"]
