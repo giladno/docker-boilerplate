@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Docker Boilerplate</title>
+    </head>
 
-<head>
-    <title>Docker Boilerplate</title>
-</head>
-
-<body>
-    Click here: <button>Ping</button>
-    <script>
-        document.querySelector('button').addEventListener('click', function () {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", '/api/ping', true);
-            xhr.onload = function () {
-                alert(this.responseText);
-            };
-            xhr.send(null);
-
-        });
-    </script>
-</body>
-
+    <body>
+        Click here: <button>Ping</button>
+        <script>
+            document.querySelector('button').addEventListener('click', function() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/api/ping', true);
+                xhr.onload = function() {
+                    alert(this.responseText);
+                };
+                xhr.send(null);
+            });
+        </script>
+    </body>
 </html>

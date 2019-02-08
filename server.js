@@ -1,5 +1,4 @@
 ('use strict');
-const path = require('path');
 const express = require('express');
 const winston = require('winston');
 
@@ -37,18 +36,13 @@ if (__DEV__) {
     });
 }
 
-for (const [name, controller] of Object.entries(
-    require('require-all')({dirname: path.resolve(__dirname, './controllers'), recursive: false})
-)) {
-    winston.info(`Registering controller /${name}`);
-    app.use(`/${name}`, controller);
-}
+app.get('/ping', (req, res) => res.send('pong'));
 
 app.use((req, res) => res.status(404).send('Not Found'));
 
 app.use((err, req, res, next) => {
     winston.error(err.message, {url: req.url, err});
-    res.status(500).send('Server Error');
+    res.status(500).send(__DEV__ ? `${req.method} ${req.url}: ${err.message}\n${err.stack}` : 'Server Error');
     next;
 });
 

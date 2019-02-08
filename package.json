@@ -17,7 +17,6 @@
         "longjohn": "^0.2.12",
         "morgan": "^1.9.1",
         "mysql2": "^1.6.4",
-        "require-all": "^3.0.0",
         "sequelize": "^4.42.0",
         "winston": "^3.2.1"
     },
