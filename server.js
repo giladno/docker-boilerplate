@@ -53,11 +53,13 @@ process.on('unhandledRejection', err => {
 
 (async () => {
     await sequelize.sync();
-    await new Promise((resolve, reject) =>
+    const server = await new Promise((resolve, reject) =>
         require('http')
             .Server(app)
-            .listen(Number(process.env.PORT) || 3000, resolve)
-            .on('error', reject)
+            .listen(Number(process.env.PORT) || 3000, function(err) {
+                if (err) return reject(err);
+                resolve(this);
+            })
     );
-    winston.info('server is running...');
+    winston.info(`server is running on port ${server.address().port}...`);
 })();
