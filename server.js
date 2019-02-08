@@ -6,7 +6,7 @@ const __DEV__ = process.env.NODE_ENV == 'development';
 
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize(process.env.DATABASE_URL);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {operatorsAliases: false});
 
 winston.add(
     new winston.transports.Console({
