@@ -15,7 +15,6 @@ HEALTHCHECK --interval=15s --timeout=10s --retries=5 --start-period=30s CMD node
 
 COPY package*.json ./
 RUN npm install --quiet --no-progress && npm cache clean --force
-ENV PATH /opt/node_modules/.bin:$PATH
 
 COPY . .
 
