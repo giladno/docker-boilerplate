@@ -13,11 +13,11 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.16.4",
+        "express": "^4.17.1",
         "longjohn": "^0.2.12",
         "morgan": "^1.9.1",
-        "mysql2": "^1.6.4",
-        "sequelize": "^4.42.0",
+        "mysql2": "^1.6.5",
+        "sequelize": "^5.8.6",
         "winston": "^3.2.1"
     },
     "nodemonConfig": {
@@ -30,8 +30,8 @@
     },
     "devDependencies": {
         "babel-eslint": "^10.0.1",
-        "eslint": "^5.13.0",
-        "eslint-plugin-node": "^8.0.1",
-        "nodemon": "^1.18.9"
+        "eslint": "^5.16.0",
+        "eslint-plugin-node": "^9.1.0",
+        "nodemon": "^1.19.1"
     }
 }
